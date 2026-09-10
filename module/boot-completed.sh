@@ -29,16 +29,22 @@ fi
 # SU Compat
 if [[ "${config_su_compat}" == "1" ]]; then
 	${KSU_BIN} feature set su_compat 1
+elif [[ "${config_su_compat}" == "0" ]]; then
+	${KSU_BIN} feature set su_compat 0
 fi
 
 # Kernel Umount
 if [[ "${config_kernel_umount}" == "1" ]]; then
 	${KSU_BIN} feature set kernel_umount 1
+elif [[ "${config_kernel_umount}" == "0" ]]; then
+	${KSU_BIN} feature set kernel_umount 0
 fi
 
 # Hide SELinux modification
 if [[ "${config_selinux_hide}" == "1" ]]; then
 	${KSU_BIN} feature set selinux_hide 1
+elif [[ "${config_selinux_hide}" == "0" ]]; then
+	${KSU_BIN} feature set selinux_hide 0
 fi
 
 ${KSU_BIN} feature save
