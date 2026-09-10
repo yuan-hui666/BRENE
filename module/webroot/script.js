@@ -206,7 +206,7 @@ exec('susfs show enabled_features').then((result) => {
 		container.innerText = 'Failed to load enabled features'
 		return
 	}
-	container.innerText = result.stdout.replaceAll('CONFIG_KSU_SUSFS_', '').replaceAll('_', ' ')
+	container.innerText = result.stdout.replaceAll('CONFIG_KSU_SUSFS_', '')
 })
 
 // Load logs
