@@ -340,10 +340,10 @@ exec(`cat ${PERSISTENT_DIR}/config.sh`).then((result) => {
 	})
 })
 
-// KSU Modules toggles
+// KSU Module Control
 ;(async () => {
-	const enableSwitch = document.getElementById('enable_ksu_modules')
-	const disableSwitch = document.getElementById('disable_ksu_modules')
+	const enableButton = document.getElementById('enable_ksu_modules')
+	const disableButton = document.getElementById('disable_ksu_modules')
 
 	const toggleAllModules = (enable) => {
 		exec(`
@@ -355,8 +355,8 @@ exec(`cat ${PERSISTENT_DIR}/config.sh`).then((result) => {
 		})
 	}
 
-	enableSwitch.addEventListener('click', () => toggleAllModules(true))
-	disableSwitch.addEventListener('click', () => toggleAllModules(false))
+	enableButton.addEventListener('click', () => toggleAllModules(true))
+	disableButton.addEventListener('click', () => toggleAllModules(false))
 })()
 
 // Custom Uname buttons
